@@ -42,7 +42,7 @@ def _build_parser() -> argparse.ArgumentParser:
         default="clean",
         help="Scan simulation mode (default: clean)",
     )
-    render.add_argument("--format", choices=("jpg", "png"), default="jpg")
+    render.add_argument("--format", choices=("jpg", "png", "pdf"), default="jpg")
     render.add_argument("--quality", type=int, default=92, help="JPEG quality")
 
     analyze = sub.add_parser(
