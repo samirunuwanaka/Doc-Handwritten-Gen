@@ -78,6 +78,7 @@ UniScript Ink converts supported documents into coherent handwritten-style, high
 - Preserve Unicode and mixed-script text. Handle bidirectional text, shaping, combining marks, and missing glyphs explicitly. Never silently replace unsupported characters with blank boxes or claim full script support without tests.
 - Keep mathematical structure and diagram meaning intact. Do not flatten equations into plain strings when that loses meaning, or distort graph data, circuit connections, flowchart relationships, or geometry.
 - Keep handwriting style parameters reusable and consistent across pages and scripts. Clearly label glyph/font-based fallback rendering; do not present it as genuine stroke synthesis.
+- Optional `--reference` handwriting photos must produce one derived identity for the whole job. Match visual traits honestly; do not claim exact personal glyph cloning until Level B exists and is tested.
 - Prefer a functional CPU-only path. Add heavyweight ML dependencies, download large models, or train models only when justified by the task and documented requirements.
 - Preserve readability and page boundaries. Report uncertain OCR, missing glyphs, clipping, overlaps, unsupported features, and other content-integrity risks rather than hiding them with visual effects.
 - Provide high-resolution JPG export and preserve optional PNG/PDF exports if implemented. Keep output settings and warnings reproducible and documented.

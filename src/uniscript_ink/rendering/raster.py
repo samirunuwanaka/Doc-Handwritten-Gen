@@ -102,9 +102,21 @@ def render_pages(
                 dy = rng.uniform(-profile.variation, profile.variation) * line.font_size
                 # Mild slant via horizontal shear offset by vertical position within line
                 shear = math.tan(slant) * (dy * 0.2)
+                # Extra per-glyph slant from profile (matches reference-derived slant)
+                shear += math.tan(slant) * (line.font_size * 0.08)
                 cx = x + dx + shear
                 cy = y + dy
                 odraw.text((cx, cy), ch, font=font, fill=ink)
+                # Approximate pen weight from profile stroke width (Level C)
+                weight = max(0.0, profile.base_stroke_width - 1.4)
+                if weight > 0.05:
+                    for ox, oy in ((1, 0), (0, 1), (-1, 0), (0, -1)):
+                        odraw.text(
+                            (cx + ox * weight * 0.35, cy + oy * weight * 0.35),
+                            ch,
+                            font=font,
+                            fill=ink,
+                        )
                 x += glyph_w * profile.char_spacing
 
         composed = Image.alpha_composite(base.convert("RGBA"), overlay).convert("RGB")

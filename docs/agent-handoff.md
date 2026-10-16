@@ -61,7 +61,7 @@ flowchart LR
 
 | Phase | Done when | Next agent should |
 |-------|-----------|-------------------|
-| 1 | `render` CLI works for `.txt`/`.md`, tests pass, Level C labelled | Add DOCX/PDF/LaTeX adapters without changing IR consumers |
+| 1 | `render` CLI works for `.txt`/`.md`, optional `--reference` style match, tests pass, Level C labelled | Add DOCX/PDF/LaTeX adapters without changing IR consumers; Level B glyph cloning later |
 | 2 | Independent tested adapters | Keep maths as structured blocks |
 | 3 | Equations/tables/figures preserve meaning | Add stroke models behind the same profile API |
 | 4 | Preview UI + evaluation | Do not claim human-indistinguishable handwriting |

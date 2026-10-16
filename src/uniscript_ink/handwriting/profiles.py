@@ -28,16 +28,32 @@ class HandwritingProfile:
     line_drift: float
     variation: float
     synthesis_level: str = "C"
+    reference_image: str | None = None
+    reference_confidence: float | None = None
 
     def to_manifest(self) -> dict[str, Any]:
-        return {
+        note = "Level C = script-aware glyph fallback with controlled variation"
+        if self.reference_image:
+            note = (
+                "Level C-reference = visual identity matched from a user handwriting photo "
+                "(ink, slant, weight, spacing). Exact character-shape cloning requires Level B."
+            )
+        data: dict[str, Any] = {
             "name": self.name,
             "display_name": self.display_name,
             "synthesis_level": self.synthesis_level,
             "ink_color": list(self.ink_color),
+            "ink_opacity": self.ink_opacity,
+            "base_stroke_width": self.base_stroke_width,
             "slant_degrees": self.slant_degrees,
-            "note": "Level C = script-aware glyph fallback with controlled variation",
+            "char_spacing": self.char_spacing,
+            "word_spacing": self.word_spacing,
+            "note": note,
         }
+        if self.reference_image:
+            data["reference_image"] = self.reference_image
+            data["reference_confidence"] = self.reference_confidence
+        return data
 
 
 def _load_raw() -> dict[str, Any]:

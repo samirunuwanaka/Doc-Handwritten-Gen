@@ -9,6 +9,7 @@ from typing import Any
 from uniscript_ink.export.jpg import export_images, write_manifest
 from uniscript_ink.handwriting.fonts import font_warning_if_needed, resolve_font_path
 from uniscript_ink.handwriting.profiles import HandwritingProfile, load_profile
+from uniscript_ink.handwriting.reference import profile_from_reference, reference_warnings
 from uniscript_ink.languages.scripts import annotate_document
 from uniscript_ink.layout.paginate import layout_document, load_paper
 from uniscript_ink.parsers.base import parse_document
@@ -34,13 +35,25 @@ def render_file(
     scan_mode: str = "clean",
     image_format: str = "jpg",
     quality: int = 92,
+    reference_image: str | Path | None = None,
 ) -> RenderResult:
     source = Path(input_path)
     # Parse from a content copy; original file is never written.
     doc = parse_document(source)
     doc = annotate_document(doc)
 
-    profile = load_profile(profile_name)
+    reference_meta: dict[str, Any] | None = None
+    if reference_image is not None:
+        profile, analysis = profile_from_reference(
+            reference_image,
+            base_profile=profile_name,
+        )
+        for warning in reference_warnings(analysis):
+            doc.warnings.append(warning)
+        reference_meta = analysis.to_dict()
+    else:
+        profile = load_profile(profile_name)
+
     paper = load_paper(paper_name)
     font_path = resolve_font_path()
     warn = font_warning_if_needed(font_path)
@@ -59,6 +72,8 @@ def render_file(
     report["dpi"] = dpi
     report["scan_mode"] = scan_mode
     report["image_format"] = image_format
+    if reference_meta is not None:
+        report["reference_analysis"] = reference_meta
 
     manifest_path = write_manifest(Path(out_dir) / f"{stem}_manifest.json", report)
     return RenderResult(
