@@ -1,0 +1,58 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Local secrets and machine-specific config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and generated artifacts (regenerate locally)
+tmp/
+temp/
+.cache/
+*.log
+results/generated/
+results/tmp/
+
+# Large model weights (document how to obtain)
+models/weights/
+*.pt
+*.pth
+*.onnx
+*.bin
+!models/.gitkeep
+
+# User uploads (never commit private documents)
+uploads/
