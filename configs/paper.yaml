@@ -1,0 +1,29 @@
+blank:
+  display_name: Blank white paper
+  background: [252, 252, 248]
+  line_color: null
+  line_spacing_pt: null
+  margin_pt: 54
+
+ruled:
+  display_name: Ruled paper
+  background: [252, 252, 248]
+  line_color: [180, 200, 230]
+  line_spacing_pt: 28
+  margin_pt: 54
+
+notebook:
+  display_name: Notebook paper
+  background: [250, 248, 240]
+  line_color: [170, 195, 225]
+  line_spacing_pt: 26
+  margin_pt: 64
+  margin_line_color: [220, 120, 120]
+
+graph:
+  display_name: Graph paper
+  background: [252, 252, 248]
+  line_color: [210, 225, 210]
+  line_spacing_pt: 18
+  margin_pt: 48
+  grid: true

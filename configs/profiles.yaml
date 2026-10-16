@@ -1,0 +1,107 @@
+# Shared handwriting identity presets.
+# All pages in one job must use a single profile.
+
+neat_student:
+  display_name: Neat student handwriting
+  base_stroke_width: 1.6
+  ink_color: [28, 36, 56]
+  ink_opacity: 0.92
+  slant_degrees: 2.0
+  char_spacing: 1.02
+  word_spacing: 1.15
+  relative_size: 1.0
+  curvature: 0.15
+  baseline_drift: 0.4
+  line_drift: 0.8
+  variation: 0.04
+  synthesis_level: C
+
+everyday:
+  display_name: Natural everyday handwriting
+  base_stroke_width: 1.8
+  ink_color: [20, 28, 48]
+  ink_opacity: 0.9
+  slant_degrees: 6.0
+  char_spacing: 1.05
+  word_spacing: 1.2
+  relative_size: 1.02
+  curvature: 0.28
+  baseline_drift: 0.9
+  line_drift: 1.4
+  variation: 0.08
+  synthesis_level: C
+
+irregular_notes:
+  display_name: Slightly irregular handwritten notes
+  base_stroke_width: 2.0
+  ink_color: [25, 30, 45]
+  ink_opacity: 0.88
+  slant_degrees: 9.0
+  char_spacing: 1.08
+  word_spacing: 1.25
+  relative_size: 1.04
+  curvature: 0.4
+  baseline_drift: 1.4
+  line_drift: 2.0
+  variation: 0.12
+  synthesis_level: C
+
+fine_tip:
+  display_name: Fine-tip pen
+  base_stroke_width: 1.2
+  ink_color: [15, 25, 70]
+  ink_opacity: 0.95
+  slant_degrees: 4.0
+  char_spacing: 1.0
+  word_spacing: 1.12
+  relative_size: 0.98
+  curvature: 0.18
+  baseline_drift: 0.5
+  line_drift: 0.9
+  variation: 0.05
+  synthesis_level: C
+
+ballpoint:
+  display_name: Ballpoint pen
+  base_stroke_width: 1.7
+  ink_color: [18, 40, 110]
+  ink_opacity: 0.9
+  slant_degrees: 5.0
+  char_spacing: 1.03
+  word_spacing: 1.18
+  relative_size: 1.0
+  curvature: 0.22
+  baseline_drift: 0.7
+  line_drift: 1.1
+  variation: 0.06
+  synthesis_level: C
+
+pencil:
+  display_name: Pencil handwriting
+  base_stroke_width: 1.9
+  ink_color: [70, 70, 75]
+  ink_opacity: 0.75
+  slant_degrees: 3.0
+  char_spacing: 1.04
+  word_spacing: 1.16
+  relative_size: 1.0
+  curvature: 0.2
+  baseline_drift: 0.6
+  line_drift: 1.0
+  variation: 0.07
+  synthesis_level: C
+
+dark_notebook:
+  display_name: Dark-ink notebook writing
+  base_stroke_width: 2.1
+  ink_color: [10, 12, 20]
+  ink_opacity: 0.96
+  slant_degrees: 7.0
+  char_spacing: 1.06
+  word_spacing: 1.22
+  relative_size: 1.03
+  curvature: 0.3
+  baseline_drift: 1.0
+  line_drift: 1.5
+  variation: 0.09
+  synthesis_level: C

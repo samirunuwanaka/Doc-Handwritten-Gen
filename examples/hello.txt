@@ -1,0 +1,3 @@
+Hello from UniScript Ink.
+
+This plain-text fixture checks Unicode preservation: café, naïve, Ζεύς.
